@@ -10,7 +10,7 @@ def completar(lista, tamanho, item):
 def alternar(materias_cortadas):
     materias = list(map(
         lambda lista: sorted(
-            lista, reverse=choice((True, False))),
+            lista, reverse=choice((True, False)),
             key = lambda ProfessorMateria: ProfessorMateria._professor
         ),
         materias_cortadas
