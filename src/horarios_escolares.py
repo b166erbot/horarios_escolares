@@ -12,13 +12,12 @@ from .ferramentas import cortar, completar, alternar
 
 def main() -> NoReturn:
     print(
-        '\ndigite o nome do professor[texto], sua matéria[texto] e o '
-        'número[número] de vezes que o professor precisa dar a matéria'
-        ' durante a semana.\n'
+        '\ndigite o nome do professor, sua matéria,'
+        'o horario e o dia da semana. Nenhum destes são obrigatórios responder'
     )
     entradas = pegar_entradas_loop(
         pegar_entradas, (
-            'professor(a)', 'matéria', 'horario', 'semana'
+            'professor(a)', 'matéria', 'horario', 'dia da semana'
         )
     )
     semana_ = Semana()
