@@ -7,7 +7,7 @@ from .entradas import pegar_entradas, pegar_entradas_loop
 from .classes import (
     semana_nomes, Horario, HorarioVazio, Semana
 )
-from .ferramentas import cortar, completar, alternar
+from .ferramentas import cortar, completar  # , alternar
 
 
 def main() -> NoReturn:
