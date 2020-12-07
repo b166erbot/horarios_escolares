@@ -7,7 +7,7 @@ from .entradas import pegar_entradas, pegar_entradas_loop
 from .classes import (
     semana_nomes, Horario, HorarioVazio, Semana
 )
-from .ferramentas import cortar, completar  # , alternar
+from .ferramentas import cortar, completar
 
 
 def main() -> NoReturn:
@@ -20,23 +20,23 @@ def main() -> NoReturn:
             'professor(a)', 'matéria', 'horario', 'dia da semana'
         )
     )
-    semana_ = Semana()
+    semana = Semana()
     for (professor, materia, horario, dia_semana) in entradas:
-        semana_.adicionar(
+        semana.adicionar(
             dia_semana, Horario(professor, materia, horario, dia_semana)
         )
     # completar com espaços vazios
-    if len(semana_) < 25:
-        horarios_ = completar(semana_.tudo(), 25, HorarioVazio)
+    if len(semana) < 25:
+        horarios_ = completar(semana.tudo(), 25, HorarioVazio)
         for horario_ in horarios_:
-            semana_.adicionar('', horario_)
+            semana.adicionar('', horario_)
     misturar = 's'
     while misturar == 's':
         tabela = Texttable()
-        semana_.sacudir()
-        materias_ = cortar(semana_.tudo(), 5)
+        semana.sacudir()
+        materias = cortar(semana.tudo(), 5)
         tabela.add_rows(
-            (semana_nomes, *zip(*materias_))
+            (semana_nomes, *zip(*materias))
         )
         print(tabela.draw())
         misturar = input('deseja misturar novamente? [s/n]: ')
